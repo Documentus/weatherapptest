@@ -28,6 +28,17 @@ paths:
       description: A snapshot of the weather in the location selected for the time and date selected.
       parameters:
         - $ref: '#/components/parameters/lon'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type:
+                - number
+                - object
+              description: Timezone for the station
+              default: 0
+            examples: {}
+        description: ''
 components:
   schemas: {}
   securitySchemes:
