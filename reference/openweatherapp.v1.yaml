@@ -15,11 +15,32 @@ servers:
   - url: 'http://localhost:3000'
   - url: 'https://api.openweathermap.org/data/2.5'
     description: Prod
-paths: {}
+paths:
+  /weather:
+    get:
+      summary: Weather
+      tags:
+        - Weather endpoints”
+      responses:
+        '200':
+          description: OK
+      operationId: get-weather
+      description: A snapshot of the weather in the location selected for the time and date selected.
+      parameters:
+        - $ref: '#/components/parameters/lon'
 components:
   schemas: {}
   securitySchemes:
-    API Key - 1:
+    9a73f7fb7f468226957f8b2333606a8d:
       name: appid
       type: apiKey
       in: query
+  parameters:
+    lon:
+      name: lon
+      in: query
+      description: '**Longitude**. *Example: 139*. Longitude coordinate of the location of your interest. Must use with `lat`.'
+      schema:
+        type: string
+tags:
+  - name: Weather endpoints”
